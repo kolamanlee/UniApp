@@ -1,6 +1,8 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<view style="font-size:50" class="iconfont icon-saoyisao"></view>
+		<image v-if="show" 
+		class="logo animated bounceIn fast" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
@@ -11,6 +13,7 @@
 	export default {
 		data() {
 			return {
+				show:true,
 				title: 'Hello my Wechat UniApp'
 			}
 		},
