@@ -17,5 +17,8 @@
 	@import url("/common/uni.css");
 	@import url("/common/animate.css");
 	@import url("/common/icon.css");
+	/* UI基础库 */
+	@import url("/common/zcm-main.css");
+	/*  */
 	@import url("/common/common.css");
 </style>

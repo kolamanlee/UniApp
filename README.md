@@ -83,6 +83,35 @@ image{ width: 100%;}
 ```
 
 
+### UI 基础库封装(/common/zcm-main.css)
+1. 什么是基础封装库(参考boostrap的css, )
+```
+颜色：背景颜色/边框颜色/文本颜色
+布局：
+边框：
+内边距：
+外边距：
+字体大小：
+行高：
+FLEX布局：
+```
+example: 在index.vue中使用zcm-main.css,加入如下代码到<template>中: (有问题???)
+```
+	<view class="d-flex bg-white border-top position-fixed bottom-0 left-0 right-0 " style="height: 90upx;">
+		<view class="flex-1 d-flex j-center a-center flex-column line-h">
+			<view class="iconfont icon-xihuan line-h"></view>
+			收藏			
+		</view>
+		<view class="flex-1 d-flex j-center a-center flex-column line-h">
+			<view class="iconfont icon-gouwuche line-h"></view>
+			购物车
+		</view>
+		<view style="flex:2.5;" class="text-white main-bg-color d-flex j-center a-center flex-column line-h" hover-class="main-bg-hover-color">加入购物车</view>
+	</view>
+
+```
+2. upx:是在uni-app中定义的屏幕的宽度为750upx.等同于微信中的rpx. 因此所有的宽度和长度都要以前为基础进行计算.
+3. 
 ### 
 
 
@@ -93,7 +122,10 @@ image{ width: 100%;}
 1. 阿里巴巴图标库：https://www.iconfont.cn/
 2. css动画库:  https://daneden.github.io/animate.css/
 3. 取色值工具：
-4. 
+4. 前框开发框架 bootstrap中文网：https://www.bootcss.com/,https://v4.bootcss.com/docs/4.3/utilities/flex/
+utilities/colors
+5. photoshop:
+
 ```
 ### 
 ### 
