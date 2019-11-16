@@ -86,16 +86,9 @@ image{ width: 100%;}
 ### UI 基础库封装(/common/zcm-main.css)
 1. 什么是基础封装库(参考boostrap的css, )
 ```
-颜色：背景颜色/边框颜色/文本颜色
-布局：
-边框：
-内边距：
-外边距：
-字体大小：
-行高：
-FLEX布局：
+颜色：布局：边框：内边距：外边距：字体大小：行高：FLEX布局：
 ```
-example: 在index.vue中使用zcm-main.css,加入如下代码到<template>中: (有问题???)
+example: 在index.vue中使用zcm-main.css,加入如下代码到<template>中: (注意：position-fixed bottom-0 在HBuilder的内置浏览器中不支持，需要用#ifdef H5 在zcm-main.css等来条件编译区别，以便可以在内置浏览器中支持。)
 ```
 	<view class="d-flex bg-white border-top position-fixed bottom-0 left-0 right-0 " style="height: 90upx;">
 		<view class="flex-1 d-flex j-center a-center flex-column line-h">
@@ -112,13 +105,50 @@ example: 在index.vue中使用zcm-main.css,加入如下代码到<template>中: (
 ```
 2. upx:是在uni-app中定义的屏幕的宽度为750upx.等同于微信中的rpx. 因此所有的宽度和长度都要以前为基础进行计算.
 3. 
-### 
+### 首页开发(vue部分)
+1. 首页pages.json
+```
+				"app-plus":{
+					"scrollIndicator":"none",
+					"titleNView":{
+						"searchInput":{
+							"align":"left",
+							"backgroundColor":"#F7F7F7",
+							"borderRadius":"4px",
+							"disabled":true,
+							"placeholder":"智能积木，越野四驱",
+							"placeholderColor":"#CCCCCC"
+						},
+						"buttons":[
+							// 消息
+							{
+								"color":"#989898",
+								"colorPressed":"#FD6801",
+								"float":"left",
+								"fontSize":"22px",
+								"fontSrc":"/static/font/iconfont.ttf",
+								"text":"\ue67a"
+							},
+							// 扫一扫
+							{
+								"color":"#989898",
+								"colorPressed":"#FD6801",
+								"float":"right",
+								"fontSize":"22px",
+								"fontSrc":"/static/font/iconfont.ttf",
+								"text":"\ue661"
+							}
+						]
+					}
+				}
 
+```
 
 ### 
 
 ### 网上相关资源
 ```
+0. Uni App官网：https://uniapp.dcloud.io/
 1. 阿里巴巴图标库：https://www.iconfont.cn/
 2. css动画库:  https://daneden.github.io/animate.css/
 3. 取色值工具：

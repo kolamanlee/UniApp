@@ -35,7 +35,13 @@ body{
 .position-relative{ position: relative; }
 .left-0{ left: 0; }
 .top-0{ top: 0; }
+/* #ifdef H5 */
+/*  By kolaman */
+.bottom-0{ bottom: 140upx; }
+/* #endif */
+/* #ifndef H5 */
 .bottom-0{ bottom: 0; }
+/* #endif */
 .right-0{ right: 0; }
 /* 宽高 */
 .w-100{ width: 100%;}
@@ -52,7 +58,13 @@ body{
 .font-weight-100{ font-weight: 100!important; }
 
 .line-h0{ line-height: 0!important; }
+/* #ifdef H5 */
+.line-h{line-height: 2!important;}
+/* #endif */
+/* #ifndef H5 */
 .line-h{ line-height: 1!important; }
+/* #endif */
+
 .line-h-sm{ line-height: 1.2!important; }
 .line-h-md{ line-height: 1.5!important; }
 .line-h-lg{ line-height: 2!important; }

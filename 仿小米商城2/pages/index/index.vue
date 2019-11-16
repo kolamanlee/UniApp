@@ -1,7 +1,19 @@
 <template>
-	<view class="d-flex bg-white border-top position-fixed bottom-0 left-0 right-0 " style="height: 90upx;">
+	<!-- 轮播图组件 -->
+	<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+		<swiper-item>
+			<view class="swiper-item">
+				<image src="../../static/images/demo/demo4.jpg" 
+				lazy-load
+				style="height: 350upx;"
+				mode="">
+				</image>
+			</view>
+		</swiper-item>
+	</swiper>
+<!-- 	<view class="d-flex bg-white border-top position-fixed bottom-0 left-0 right-0 " style="height: 90upx;">	
 		<view class="flex-1 d-flex j-center a-center flex-column line-h">
-			<view class="iconfont icon-xihuan line-h"></view>
+			<view class="iconfont icon-xihuan line-h "></view>
 			收藏			
 		</view>
 		<view class="flex-1 d-flex j-center a-center flex-column line-h">
@@ -10,15 +22,8 @@
 		</view>
 		<view style="flex:2.5;" class="text-white main-bg-color d-flex j-center a-center flex-column line-h" hover-class="main-bg-hover-color">加入购物车</view>
 	</view>
-<!-- 	<view class="content">
-		<view style="font-size:50" class="iconfont icon-saoyisao"></view>
-		<image v-if="show" 
-		class="logo animated bounceIn fast" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
- --></template>
+ -->	
+</template>
 
 <script>
 	export default {
