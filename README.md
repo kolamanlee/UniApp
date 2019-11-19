@@ -143,6 +143,18 @@ example: 在index.vue中使用zcm-main.css,加入如下代码到<template>中: (
 				}
 
 ```
+2. 首页轮播Swiper组件开发
+```
+a. 创建一个组件目录及文件:components/index/swiper-image.vue
+b. 在swiper-image.vue组件文件中写出轮播组件的template和script
+c.  相关的关系：
+	1).index.vue中引入组件（注意swiperImage与文件swiper-image的关系,以及@代表的路径的位置）：import swiperImage from "@/components/index/swiper-image.vue"
+	2).index.vue中提供数据: swipers 
+	3).index.vue中的template中加载组件和数据
+
+```
+4. d 
+3. dd 
 
 ### 
 
