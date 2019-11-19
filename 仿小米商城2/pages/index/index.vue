@@ -1,7 +1,70 @@
 <template>
 	<!-- 轮播图组件 -->
 	<swiper-image :resdata="swipers"></swiper-image>
-	
+	<!-- 首页分类 -->
+	<view class="row j-center m-2">
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		<view class="span-4 d-flex flex-column j-center a-center py-1">
+			<image src="/static/images/indexnav/1.png" 
+			style="width: 60upx;height: 60upx;"
+			mode="widthFix"></image>
+			<text class="font-sm">新品发布</text>
+		</view>
+		
+	</view>
 </template>
 
 <script>
