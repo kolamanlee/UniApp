@@ -153,8 +153,34 @@ c.  相关的关系：
 	3).index.vue中的template中加载组件和数据
 
 ```
-4. d 
-3. dd 
+3. 图标分类组件
+组件的创建方法类似swiper组件，然后在index.vue中作如下引用:
+```
+<index-nav    :resdata="indexnavs"></index-nav>
+```
+4. 分割线组件:因为很多页面都使用，将其作为全局组件，放在main.js中引入
+```
+<divider></divider>
+```
+5. 三图广告位组件
+```
+		<view class="d-flex">
+			<image src="/static/images/demo/demo1.jpg"
+			lazy-load="true"
+			style="width:373upx; height: 530upx;border-right: 2upx solid #F5F5F5;"
+			></image>
+			
+			<view class="d-flex flex-column">
+				<image src="/static/images/demo/demo2.jpg"
+				style="width: 375upx;height: 264upx;border-bottom: 2upx solid #F5F5F5;"></image>
+
+				<image src="/static/images/demo/demo2.jpg"
+				style="width: 375upx;height: 264upx;"></image>
+			</view>			
+		</view>
+```
+5. 
+5. 
 
 ### 
 
@@ -166,7 +192,7 @@ c.  相关的关系：
 3. 取色值工具：
 4. 前框开发框架 bootstrap中文网：https://www.bootcss.com/,https://v4.bootcss.com/docs/4.3/utilities/flex/
 utilities/colors
-5. photoshop:
+5. photoshop: 用于图片的像素大小获取，修图等...
 
 ```
 ### 
