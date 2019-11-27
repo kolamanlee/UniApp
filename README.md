@@ -179,7 +179,13 @@ c.  相关的关系：
 			</view>			
 		</view>
 ```
-5. 
+5. card 组件封装：
+```
+1. 在index.vue中引入组件中变量加":" 与不加的区别是啥？ 例如card.vue中的showHead与:showHead的区别？
+2. card中组件放到/components/common/card.vue中。
+
+```
+6. 
 5. 
 
 ### 

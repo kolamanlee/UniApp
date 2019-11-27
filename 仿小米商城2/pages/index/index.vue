@@ -7,20 +7,10 @@
 		<!-- 分割线组件:因为很多页面都使用，将其作为全局组件，放在main.js中引入 -->
 		<divider></divider>
 		<!-- 三图广告位组件：左边w:373 h530  右边w375 h263 边h2 -->
-		<view class="d-flex">
-			<image src="/static/images/demo/demo1.jpg"
-			lazy-load="true"
-			style="width:373upx; height: 530upx;border-right: 2upx solid #F5F5F5;"
-			></image>
-			
-			<view class="d-flex flex-column">
-				<image src="/static/images/demo/demo2.jpg"
-				style="width: 375upx;height: 264upx;border-bottom: 2upx solid #F5F5F5;"></image>
-
-				<image src="/static/images/demo/demo2.jpg"
-				style="width: 375upx;height: 264upx;"></image>
-			</view>			
-		</view>
+		<three-adv :resdata="threeAdv"></three-adv>
+		<!-- 卡片组件 -->
+		<card headTitle="每日精选" bodyCover="/static/images/demo/cate_banner.png"></card>
+		
 		<!--  -->
 				
 	</view>
@@ -29,10 +19,15 @@
 <script>
 	import swiperImage from "@/components/index/swiper-image.vue"
 	import indexNav from "@/components/index/index-nav.vue"
+	import threeAdv from "@/components/index/three-adv.vue"
+	import card from "@/components/common/card.vue"
+	
 	export default {
 		components:{
 			swiperImage,
-			indexNav
+			indexNav,
+			threeAdv,
+			card
 		},
 		data() {
 			return {
@@ -52,7 +47,18 @@
 					{src:"/static/images/indexnav/8.gif", text:"电热热卖"},
 					{src:"/static/images/indexnav/9.gif", text:"家电热卖"},
 					{src:"/static/images/indexnav/10.gif", text:"米粉卡"}
-				]
+				],
+				threeAdv:{
+					big:{
+						src:"/static/images/demo/demo1.jpg"
+					},
+					smalltop:{
+						src:"/static/images/demo/demo2.jpg"					
+					},
+					smallbottom:{
+						src:"/static/images/demo/demo3.jpg"
+					}			
+				}
 			}
 		},
 		onLoad() {
