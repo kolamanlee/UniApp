@@ -11,21 +11,9 @@
 		<!-- 卡片组件 -->
 		<card headTitle="每日精选" bodyCover="/static/images/demo/cate_banner.png"></card>
 		<!-- 列表组件 -->
-		<view class="row">
+		<view class="row j-sb">
 			<block v-for="(item,index) in commonList" :key="index">
-				<view style="width: 372.5upx;">
-					<image :src="item.cover" mode="widthFix" lazy-load></image>
-					<view class="p-2 pt-1">
-						<view class="font-md">{{item.title}}</view>
-						<text class="d-block font text-light-muted">{{item.desc}}</text>
-						<view class="d-flex my-1">
-							<view class="d-flex main-text-color font-md">
-								<text class="a-self-start font-sm">￥</text>{{item.pprice}}
-							</view>
-							<view class="font-sm text-light-muted line-through ml-1 a-self-end">￥{{item.onLoad}}</view>
-						</view>
-					</view>
-				</view>
+				<common-list :item="item" :index="index"></common-list>
 			</block>
 		</view>
 		<!--  -->
@@ -38,13 +26,15 @@
 	import indexNav from "@/components/index/index-nav.vue"
 	import threeAdv from "@/components/index/three-adv.vue"
 	import card from "@/components/common/card.vue"
+	import commonList from "@/components/common/common-list.vue"
 
 	export default {
 		components: {
 			swiperImage,
 			indexNav,
 			threeAdv,
-			card
+			card,
+			commonList
 		},
 		data() {
 			return {

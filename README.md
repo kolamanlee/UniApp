@@ -187,8 +187,8 @@ c.  相关的关系：
 ```
 6. 公共列表组件封装
 ```
-1. 公共价格封装
-2、 公共列表组件：TODO
+1. 公共价格封装: /components/common/price.vue
+2、公共列表组件：/components/common-list.vue: 在组件中引入组件，即在公共列表组件中引入了价格封装组件.
 
 ```
 5. 
