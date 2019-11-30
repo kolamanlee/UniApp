@@ -1,24 +1,43 @@
 <template>
 	<view class="">
-		<!-- 轮播图组件 -->
-		<swiper-image :resdata="swipers"></swiper-image>
-		<!-- 图标分类组件 -->
-		<index-nav :resdata="indexnavs"></index-nav>
-		<!-- 分割线组件:因为很多页面都使用，将其作为全局组件，放在main.js中引入 -->
-		<divider></divider>
-		<!-- 三图广告位组件：左边w:373 h530  右边w375 h263 边h2 -->
-		<three-adv :resdata="threeAdv"></three-adv>
-		<!-- 卡片组件 -->
-		<card headTitle="每日精选" bodyCover="/static/images/demo/cate_banner.png"></card>
-		<!-- 列表组件 -->
-		<view class="row j-sb">
-			<block v-for="(item,index) in commonList" :key="index">
-				<common-list :item="item" :index="index"></common-list>
-			</block>
-		</view>
-		<!--  -->
+		<!-- 顶部选项卡 -->
+		<scroll-view scroll-x="true"  class=" border scroll-row" style="height: 80rpx;">
+			<view class="scroll-row-item px-3" 
+			style="height: 80rpx; line-height: 80rpx;"
+			v-for="(item,index) in tabBars" :key="index"
+			:class="tabIndex == index? 'main-text-color':''">
+			<text class="font-md">{{item.name}}</text>
+			</view>
+		</scroll-view>
 
-	</view>
+		<swiper :current="tabIndex" :style="'height:'+scrollH+'rpx;'" >
+			<swiper-item v-for="(item,index) in tabBars" :key="index">
+				<scroll-view scroll-y="true" :style="'height:'+scrollH+'rpx;'">
+					<view v-for="i in 100" :key="i">{{i}}</view>
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+		
+		<!-- 轮播图组件 -->
+		<!-- <swiper-image :resdata="swipers"></swiper-image> -->
+		<!-- 图标分类组件 -->
+		<!-- <index-nav :resdata="indexnavs"></index-nav> -->
+		<!-- 分割线组件:因为很多页面都使用，将其作为全局组件，放在main.js中引入 -->
+		<!-- <divider></divider> -->
+		<!-- 三图广告位组件：左边w:373 h530  右边w375 h263 边h2 -->
+		<!-- <three-adv :resdata="threeAdv"></three-adv> -->
+		<!-- 卡片组件 -->
+		<!-- <card headTitle="每日精选" bodyCover="/static/images/demo/cate_banner.png"></card> -->
+		<!-- 列表组件 -->
+		<!-- <view class="row j-sb"> -->
+			<!-- <block v-for="(item,index) in commonList" :key="index"> -->
+				<!-- <common-list :item="item" :index="index"></common-list> -->
+			<!-- </block> -->
+		<!-- </view> -->
+		
+		<!-- -->
+
+ </view>
 </template>
 
 <script>
@@ -38,6 +57,30 @@
 		},
 		data() {
 			return {
+				tabIndex:0,
+				tabBars:[
+					{
+						name:"关注",
+					},
+					{
+						name:"推荐",
+					},
+					{
+						name:"体育",
+					},
+					{
+						name:"热点",
+					},
+					{
+						name:"财经",
+					},
+					{
+						name:"娱乐",
+					},
+					{
+						name:"军事",
+					}
+				],
 				swipers: [{
 						src: "/static/images/demo/demo4.jpg"
 					},
@@ -135,6 +178,18 @@
 			}
 		},
 		onLoad() {
+			// 获取可视区域高度
+			uni.getSystemInfo({
+				success:(res)=>{
+					// 140upx
+					/* #ifdef H5 */
+					this.scrollH = 1200
+					/* #endif */
+					/* #ifndef H5 */
+					this.scrollH = res.windowHeight - uni.upx2px(82)
+					/* #endif */					
+				}
+			})
 
 		},
 		methods: {
