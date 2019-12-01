@@ -1,0 +1,1 @@
+<view class="d-flex main-text-color font-md"><text class="a-self-start font-sm">￥</text>{{price+''}}</view>
