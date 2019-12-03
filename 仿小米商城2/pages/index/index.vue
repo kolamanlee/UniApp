@@ -8,9 +8,10 @@
 			</view>
 		</scroll-view>
 
-		<swiper :current="tabIndex" :style="'height:'+scrollH+'rpx;'">
+		<swiper :duration="150" :current="tabIndex" :style="'height:'+scrollH+'rpx;'" @change="onChangeTab">
 			<swiper-item v-for="(item,index) in newsitems" :key="index">
-				<scroll-view scroll-y="true" :style="'height:'+scrollH+'rpx;'">
+				<scroll-view scroll-y="true" :style="'height:'+scrollH+'rpx;'"
+				@scrolltolower="loadmore(index)">
 					<block v-for="(list, listIndex) in item.list" :key="listIndex">
 
 						<!-- 轮播图组件 -->
@@ -41,7 +42,11 @@
 						</view>
 
 					</block>
-
+					
+					<!-- 上拉加载更多 -->
+					<view class="d-flex a-center j-center text-light-muted font-md py-3">
+						{{item.loadtext}}
+					</view>
 
 				</scroll-view>
 			</swiper-item>
@@ -325,6 +330,7 @@
 					/* #ifndef H5 */
 					this.scrollH = res.windowHeight - uni.upx2px(82)
 					/* #endif */
+					console.log("set scrollH to:" + this.scrollH)
 				}
 			})
 			
@@ -340,7 +346,9 @@
 				let arr =[]
 				for (var i =0; i<this.tabBars.length;i++){
 					let obj = {
-						list:[]
+						list:[],
+						// 状态有：1. 上拉加载更多 2. 加载中... 3.没有更多了
+						loadtext:"上拉加载更多"
 					}
 					// 获取首屏数据
 					if(i===0){
@@ -354,7 +362,7 @@
 			// 切换选项卡
 			changeTab(index) {
 				console.log("index:" + index)
-				console.log("scrolH:" + this.scrollH)
+				console.log("scrollH:" + this.scrollH)
 
 				if (this.tabIndex === index) {
 					return;
@@ -376,6 +384,22 @@
 				// 请求数据库
 				this.newsitems[index].list = demo2
 				
+			},
+			// 上拉加载更多
+			loadmore(index){
+				let item = this.newsitems[index]
+				// 是否处于可加载状态
+				if (item.loadtext !== '上拉加载更多')  return
+				
+				// 模拟加载
+				item.loadtext = '加载中...'				
+				setTimeout(()=>{
+					// 加载数据
+					item.list = [...item.list, ...demo2];
+					// 恢复状态
+					item.loadtext = '上拉加载更多'
+				},2000);
+					
 			}
 		}
 	}
