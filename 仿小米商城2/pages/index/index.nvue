@@ -1,0 +1,36 @@
+<template>
+	<div style="height: 100px; background-color: #007AFF;width: 375px;">
+		<text>
+			111111111
+		</text>
+		
+	</div>
+	<div style="height: 100px; background-color: #007AFF;width: 375px;">
+		<text>
+			111111111
+		</text>
+		
+	</div>
+	
+</template>
+
+<script>
+	export default {
+		data(){
+			return{
+				lists:['a','b','c','d','e']
+			}
+		},
+		methods:{
+			refresh(e){
+				
+			},
+			
+		}
+		
+	}
+</script>
+
+<style>
+
+</style>

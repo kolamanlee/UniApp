@@ -213,6 +213,60 @@ a. index.vue中的loadmore
 
 ### 
 
+### NVUE基础快速入门
+1. 基础组件解析
+```
+1). 文字写在text中
+2). <list>的子组件只能包括以下四种组件或是fix定位的组件
+    <cell>: 用于定义列表中的子列表项，类似于HTML中的ul之于li. weex会对<cell> 进行高效的内存回收以达到更好的性能
+	<header>: 当<header>到达屏幕顶部时，吸附在屏幕顶部
+	<refresh>: 用于给列表添加下拉刷新的功能
+	<loading>: 用于与特性和<refresh>类似，用于给列表添加上拉加载更多的功能
+3). 图片要给指宽度
+
+```
+2. nvue中的css注意事项
+```
+1). 单位只支持px, 不支持em, rem, pt, %, upx
+2). 宽度问题，高度问题 宽：750px=100% 高：1250px = 100%
+3). 默认为flex布局
+4). 不能合着写
+5). 背景颜色只能用background-color
+6). 选择器只支持单类
+7). 引入要用<style src="@/common/nvue-common.css" </style>
+8). <div>组件默认是display:flex; flex-direction:row
+```
+3. nvue组件解析二
+```
+在weex中的list使用<list @loadmore="">无效。
+
+改用专门的loading组件才有效，如：
+<loading  @loading="onLoading" :display="loadingShow">
+	<text> ... </text>
+</loading>
+
+```
+4. nvue与vue页面进行通讯(一)
+```
+1). 在nvue里的js中使用uni.postMessage(data)发送数据通讯，data为JSON格式(键值对的值仅支持string)
+2). 在App.vue里使用onUniNViewMessage进行监听，监听到后就用uni.$emit(data)通知页面
+3). 在指面vue中的onLoad(){}中使用uni.$on(data, e=>{})中进行捕获处理
+
+
+```
+
+4.  vue与nvue共享的变量和数据
+```
+nvue不支持vuex
+1). uni.storage vue和nvue页面可以使用相同的uni.storage存储。这个存储是持久化的。比如登陆状态可以保存在这里。
+2). globalData 小程序有globalData机制，这套机制在uni-app里也可以使用，全端通用。在App.vue文件定义globalData，通过getApp().globalData获取数据
+
+```
+5.  
+### 搜索页开发
+
+### 
+### 
 ### 网上相关资源
 ```
 0. Uni App官网：https://uniapp.dcloud.io/
@@ -222,6 +276,11 @@ a. index.vue中的loadmore
 4. 前框开发框架 bootstrap中文网：https://www.bootcss.com/,https://v4.bootcss.com/docs/4.3/utilities/flex/
 utilities/colors
 5. photoshop: 用于图片的像素大小获取，修图等...
+```
+### vscode/hbuilder/pycharm/django
+```
+1. hbuilder-->vscode: https://www.jianshu.com/p/74c06e649e71
+2. pycharm/django -->vscode: https://www.cnblogs.com/dangkai/p/10137793.html
 
 ```
 ### 

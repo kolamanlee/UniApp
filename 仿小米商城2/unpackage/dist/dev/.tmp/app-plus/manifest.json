@@ -35,9 +35,10 @@
     },
     "popGesture": "close",
     "launchwebview": {
-      "id": "1",
+      "id": "2",
       "kernel": "WKWebview",
-      "uni-app": "auto"
+      "uni-app": "auto",
+      "render": "always"
     },
     "statusbar": {
       "immersed": "supportedDevice",
@@ -45,7 +46,7 @@
       "background": "#FFFFFF"
     },
     "usingComponents": true,
-    "nvueCompiler": "uni-app",
+    "nvueCompiler": "weex",
     "distribute": {
       "google": {
         "permissions": [
@@ -92,11 +93,8 @@
     "uni-app": {
       "compilerVersion": "2.4.2",
       "control": "v8",
-      "nvueCompiler": "uni-app",
-      "renderer": "auto",
-      "nvue": {
-        "flex-direction": "column"
-      }
+      "nvueCompiler": "weex",
+      "renderer": "auto"
     },
     "tabBar": {
       "color": "#B1B1B1",
@@ -129,11 +127,7 @@
           "selectedIconPath": "static/tabbar/mySelected.png"
         }
       ],
-      "height": "50px",
-      "child": [
-        "lauchwebview"
-      ],
-      "selected": 0
+      "height": "50px"
     }
   }
 }
